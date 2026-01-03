@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,37 +10,51 @@
       padding: 0;
       height: 100%;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #FFD700, #000000, #ffffff, #25D366); /* Yellow, Black, White, Green */
+      background: linear-gradient(135deg, #FFD700, #000000, #ffffff, #25D366); /* page background */
     }
     .container {
       max-width: 500px;
       margin: 20px auto;
-      background: #ffffff;
       padding: 20px;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      background: linear-gradient(135deg, #FFD700, #000000, #ffffff, #25D366); /* container gradient */
+      color: #ffffff; /* text color for readability */
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
     h1 {
       text-align: center;
-      color: #0b7dda;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000000;
     }
     p.tagline {
       text-align: center;
       margin-bottom: 15px;
+      text-shadow: 1px 1px 2px #000000;
     }
     ul {
       margin-left: 20px;
       margin-bottom: 15px;
     }
+    ul li {
+      margin-bottom: 5px;
+      text-shadow: 1px 1px 2px #000000;
+    }
     .price-box {
-      background-color: #f0f8ff;
       padding: 15px;
       border-radius: 6px;
       margin-bottom: 15px;
+      background: rgba(0,0,0,0.2); /* semi-transparent so text stands out */
     }
     .price-box h2 {
       text-align: center;
       margin-top: 0;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000000;
+    }
+    .price-box p {
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000000;
+      margin: 5px 0;
     }
     .cta {
       text-align: center;
@@ -57,20 +71,24 @@
     }
     .policy {
       font-size: 13px;
-      background: #fff3cd;
+      background: rgba(255, 255, 255, 0.2);
       padding: 10px;
       border-radius: 5px;
       margin-top: 15px;
+      color: #000000;
+      text-shadow: none;
     }
     .contact {
       text-align: center;
       font-size: 14px;
       margin-top: 15px;
+      text-shadow: 1px 1px 2px #000000;
     }
     footer {
       text-align: center;
       font-size: 12px;
-      color: #666;
+      color: #ffffff;
+      text-shadow: 1px 1px 2px #000000;
       margin-top: 20px;
     }
   </style>
