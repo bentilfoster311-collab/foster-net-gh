@@ -1,157 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Smart Data GH | MTN Data Bundles</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #ffcc00; /* MTN Yellow */
-  }
-
-  .container {
-    max-width: 600px;
-    margin: 30px auto;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  }
-
-  h1 {
-    text-align: center;
-    color: #000;
-    margin-bottom: 5px;
-  }
-
-  .tagline {
-    text-align: center;
-    color: #333;
-    font-size: 15px;
-    margin-bottom: 20px;
-  }
-
-  .features {
-    background: #000;
-    color: #ffcc00;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    margin-bottom: 20px;
-  }
-
-  .features li {
-    margin-bottom: 6px;
-  }
-
-  .bundle {
-    background: #f7f7f7;
-    border-left: 6px solid #ffcc00;
-    padding: 14px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #000;
-    font-size: 16px;
-  }
-
-  .bundle.big {
-    background: #000;
-    color: #ffcc00;
-    border-left: 6px solid #000;
-    box-shadow: 0 0 12px rgba(0,0,0,0.4);
-  }
-
-  .cta {
-    text-align: center;
-    margin: 25px 0;
-  }
-
-  .cta a {
-    background: #000;
-    color: #ffcc00;
-    padding: 15px 25px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 10px;
-    font-weight: bold;
-    display: inline-block;
-  }
-
-  .cta a:hover {
-    opacity: 0.9;
-  }
-
-  .policy {
-    font-size: 13px;
-    text-align: center;
-    color: #444;
-    margin-top: 10px;
-  }
-
-  .contact {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 14px;
-    color: #000;
-    font-weight: bold;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 15px;
-    font-size: 12px;
-    color: #444;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Data GH - Buy Bundles</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #FFCB05, #E60000, #006847);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 30px 10px;
+      background: rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 1em;
+    }
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+      background: rgba(0,0,0,0.2);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .bundle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+      padding: 12px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .bundle:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .bundle span {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 1em;
+    }
+    input {
+      border: 2px solid #fff;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    input::placeholder {
+      color: #eee;
+    }
+    button {
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #eee;
+    }
+    .confirmation {
+      margin-top: 20px;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(0,0,0,0.3);
+      text-align: center;
+      display: none;
+    }
+    .payment-info {
+      margin: 15px 0;
+      background: rgba(255,255,255,0.1);
+      padding: 12px;
+      border-radius: 8px;
+    }
+    a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <h1>Smart Data GH</h1>
+    <p>Fast, Reliable, Affordable Data Bundles</p>
+  </header>
 
-<div class="container">
+  <div class="container">
+    <h2>Select Your Bundle</h2>
 
-  <h1>SMART DATA GH</h1>
-  <p class="tagline">Affordable MTN Non-Expiry Data<br>Fast • Reliable • Trusted</p>
+    <div class="bundle" onclick="selectBundle('1GB', 4.8)">1GB - 4.8 GHS</div>
+    <div class="bundle" onclick="selectBundle('2GB', 11)">2GB - 11 GHS</div>
+    <div class="bundle" onclick="selectBundle('3GB', 14.3)">3GB - 14.3 GHS</div>
+    <div class="bundle" onclick="selectBundle('5GB', 24.8)">5GB - 24.8 GHS</div>
+    <div class="bundle" onclick="selectBundle('6GB', 28)">6GB - 28 GHS</div>
+    <div class="bundle" onclick="selectBundle('8GB', 33)">8GB - 33 GHS</div>
+    <div class="bundle" onclick="selectBundle('10GB', 46)">10GB - 46 GHS</div>
 
-  <ul class="features">
-    <li>⚡ Fast delivery</li>
-    <li>🔒 Reliable MTN bundles</li>
-    <li>💬 Instant WhatsApp support</li>
-  </ul>
+    <h2>Enter Your Phone Number</h2>
+    <input type="text" id="phone" placeholder="e.g., 024XXXXXXXX" />
 
-  <!-- Bundles -->
-  <div class="bundle">1GB – ¢5.5</div>
-  <div class="bundle">2GB – ¢11</div>
-  <div class="bundle">3GB – ¢14.3</div>
+    <div class="payment-info">
+      <p><strong>Pay via Mobile Money:</strong></p>
+      <p>MTN: 0594910618 (Margaret)</p>
+      <p>Vodafone: 0200038427 (Foster)</p>
+    </div>
 
-  <div class="bundle big">5GB – ¢24.8</div>
-  <div class="bundle big">6GB – ¢28</div>
-  <div class="bundle big">8GB – ¢33</div>
-  <div class="bundle big">10GB – ¢46</div>
+    <button onclick="submitOrder()">Confirm Order</button>
 
-  <!-- WhatsApp -->
-  <div class="cta">
-    <a href="https://wa.me/233200038427?text=Hello%20Smart%20Data%20GH,%20I%20want%20to%20buy%20MTN%20data">
-      💬 Order on WhatsApp
-    </a>
+    <div class="confirmation" id="confirmation">
+      Thanks for your order! ✅ Your bundle will be delivered shortly.<br>
+      For questions, chat with us on <a href="https://wa.me/0200038427" target="_blank">WhatsApp</a>.
+    </div>
   </div>
 
-  <div class="policy">
-    ⚠️ Refund only if MTN fails after confirmation.
-  </div>
+  <script>
+    let selectedBundle = null;
+    let bundlePrice = 0;
 
-  <div class="contact">
-    📞 0200038427 / 0594910618
-  </div>
+    function selectBundle(name, price) {
+      selectedBundle = name;
+      bundlePrice = price;
+      alert(`You selected ${name} for ${price} GHS`);
+    }
 
-  <footer>
-    © Smart Data GH
-  </footer>
+    function submitOrder() {
+      const phone = document.getElementById('phone').value.trim();
+      if (!selectedBundle) {
+        alert("Please select a bundle first.");
+        return;
+      }
+      if (!phone) {
+        alert("Please enter your phone number.");
+        return;
+      }
 
-</div>
+      // Show confirmation message
+      const conf = document.getElementById('confirmation');
+      conf.style.display = 'block';
 
+      // Optionally, you can log order in console for manual processing
+      console.log(`New Order: ${selectedBundle} - ${bundlePrice} GHS for ${phone}`);
+      alert(`Order received for ${selectedBundle} - check your payment!`);
+    }
+  </script>
 </body>
 </html>
