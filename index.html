@@ -4,94 +4,130 @@
 <meta charset="UTF-8">
 <title>Smart Data GH | Affordable MTN Data</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 <style>
+  /* Body and background */
   html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-    /* Full-page gradient background: Yellow → Green → Dark Gray */
-    background: linear-gradient(135deg, #FFD700, #2ECC71, #333333);
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #FFD700, #2ECC71, #ffffff, #333333);
+    min-height: 100vh;
   }
+
+  /* Main container */
   .container {
-    max-width: 500px;
-    margin: 20px auto;
+    max-width: 600px;
+    margin: 30px auto;
     padding: 20px;
-    border-radius: 12px;
-    /* Semi-transparent dark overlay for readability */
-    background: rgba(0,0,0,0.3);
-    color: #ffffff;
   }
-  h1, h2, p, li {
-    text-shadow: 1px 1px 2px #000000;
-  }
+
+  /* Header */
   h1 {
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px #000000;
     margin-bottom: 10px;
-    font-size: 28px;
   }
+
   p.tagline {
     text-align: center;
-    margin-bottom: 15px;
     font-size: 16px;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
+    margin-bottom: 20px;
   }
-  ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
+
+  /* Features list */
+  ul.features {
+    margin: 0 0 20px 20px;
+    padding: 0;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px #000000;
   }
-  ul li {
-    margin-bottom: 6px;
-  }
-  .price-box {
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    background: linear-gradient(90deg, #FFD700, #2ECC71); /* price box gradient */
-  }
-  .price-box h2 {
-    text-align: center;
-    margin-top: 0;
-    font-size: 20px;
-  }
-  .price-box p {
-    margin: 5px 0;
-    font-size: 16px;
+  ul.features li {
+    margin-bottom: 8px;
     font-weight: bold;
   }
+
+  /* Bundle cards */
+  .bundle-card {
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s;
+  }
+  .bundle-card:hover {
+    transform: translateY(-5px);
+  }
+
+  /* Smaller bundles */
+  .bundle-small {
+    background: linear-gradient(90deg, #FFD700, #FFC107);
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  /* Bigger bundles (highlighted + glowing) */
+  .bundle-big {
+    background: linear-gradient(90deg, #28a745, #25D366);
+    font-size: 18px;
+    box-shadow: 0 0 15px #25D366, 0 6px 16px rgba(0,0,0,0.4);
+  }
+
+  /* WhatsApp CTA */
   .cta {
     text-align: center;
-    margin: 20px 0;
+    margin: 25px 0;
   }
   .cta a {
     background: #25D366;
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    border-radius: 8px;
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 12px;
     font-weight: bold;
-    display: inline-block;
-    font-size: 16px;
+    text-decoration: none;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
+  .cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  }
+
+  /* Policy */
   .policy {
     font-size: 13px;
     background: rgba(255,255,255,0.2);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 6px;
+    color: #000;
+    text-align: center;
     margin-top: 15px;
-    color: #000000;
-    text-shadow: none;
   }
+
+  /* Contact info */
   .contact {
     text-align: center;
     font-size: 14px;
     margin-top: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
   }
+
+  /* Footer */
   footer {
     text-align: center;
     font-size: 12px;
-    color: #ffffff;
-    text-shadow: 1px 1px 2px #000000;
+    color: #fff;
     margin-top: 20px;
+    text-shadow: 1px 1px 2px #000;
   }
 </style>
 </head>
@@ -100,29 +136,24 @@
 <div class="container">
 
   <h1>SMART DATA GH</h1>
+  <p class="tagline">Affordable <strong>MTN Non-Expiry Data</strong><br>Fast • Reliable • Trusted</p>
 
-  <p class="tagline">
-    Affordable <strong>MTN Non-Expiry Data</strong><br>
-    Fast • Reliable • Trusted
-  </p>
-
-  <ul>
+  <ul class="features">
     <li>⚡ Fast delivery (no long delays)</li>
     <li>🔒 Safe & reliable bundles</li>
     <li>💬 Quick WhatsApp response</li>
   </ul>
 
-  <div class="price-box">
-    <h2>📊 Bundle Prices</h2>
-    <p>1GB – <strong>¢5.5</strong></p>
-    <p>2GB – <strong>¢11</strong></p>
-    <p>3GB – <strong>¢14.3</strong></p>
-    <p>5GB – <strong>¢24.8</strong></p>
-    <p>6GB – <strong>¢28</strong></p>
-    <p>8GB – <strong>¢33</strong></p>
-    <p>10GB – <strong>¢46</strong></p>
-  </div>
+  <!-- Bundle cards -->
+  <div class="bundle-card bundle-small">1GB – ¢5.5</div>
+  <div class="bundle-card bundle-small">2GB – ¢11</div>
+  <div class="bundle-card bundle-small">3GB – ¢14.3</div>
+  <div class="bundle-card bundle-big">5GB – ¢24.8</div>
+  <div class="bundle-card bundle-big">6GB – ¢28</div>
+  <div class="bundle-card bundle-big">8GB – ¢33</div>
+  <div class="bundle-card bundle-big">10GB – ¢46</div>
 
+  <!-- WhatsApp CTA -->
   <div class="cta">
     <a href="https://wa.me/233200038427?text=Hello%20Smart%20Data%20GH,%20I%20want%20to%20buy%20MTN%20data">
       💬 Order on WhatsApp
@@ -130,13 +161,11 @@
   </div>
 
   <div class="policy">
-    ⚠️ <strong>Refund Policy:</strong><br>
-    Refund only if MTN fails after confirmation.
+    ⚠️ Refund only if MTN fails after confirmation.
   </div>
 
   <div class="contact">
-    📞 Contact:<br>
-    0200038427 / 0594910618
+    📞 Contact: 0200038427 / 0594910618
   </div>
 
   <footer>
@@ -146,4 +175,4 @@
 </div>
 
 </body>
-</html> 
+</html>
