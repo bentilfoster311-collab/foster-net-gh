@@ -8,7 +8,7 @@
   body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #061c30; /* MTN-style dark blue */
+    background: linear-gradient(135deg, #f5b301, #061c30); /* MTN-style gradient */
     color: #fff;
     min-height: 100vh;
   }
@@ -22,7 +22,7 @@
     margin-bottom: 30px;
   }
   header h1 {
-    color: #f5b301; /* MTN yellow */
+    color: #fff;
     font-size: 2.5rem;
     margin-bottom: 5px;
   }
@@ -126,8 +126,8 @@ form.addEventListener('submit', function(e){
     return;
   }
 
-  // 🔹 Replace this with your existing Google Apps Script web app URL
-  const webAppUrl = "YOUR_EXISTING_GOOGLE_SCRIPT_URL";
+  // 🔹 Your Apps Script Web App URL
+  const webAppUrl = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
 
   fetch(webAppUrl + `?bundle=${encodeURIComponent(bundle)}&number=${encodeURIComponent(number)}&momo=${encodeURIComponent(momo)}&amount=${encodeURIComponent(amount)}`)
   .then(response => response.text())
