@@ -7,7 +7,7 @@
 <style>
   body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ffcb05, #e60000); /* MTN-style yellow & red gradient */
+    background: linear-gradient(to right, #ffcb05, #e60000); /* MTN-style yellow & red */
     color: #000;
     margin: 0;
     padding: 0;
@@ -60,6 +60,12 @@
   button:hover {
     background: #e6b800;
   }
+  .payment-info {
+    text-align: center;
+    font-weight: bold;
+    color: #e60000;
+    margin-top: 15px;
+  }
 </style>
 </head>
 <body>
@@ -90,6 +96,12 @@
 
   <button type="submit">Confirm Order</button>
 </form>
+
+<div class="payment-info">
+  Please send payment after submitting your order:<br>
+  MTN: 0594910618 (Margaret)<br>
+  Vodafone: 0200038427 (Foster)
+</div>
 </div>
 
 <script>
@@ -107,7 +119,7 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
   })
   .then(res => res.text())
   .then(data => {
-    alert("✅ Order received! Please send payment via MoMo or Vodafone Cash.");
+    alert("✅ Order received! Please send payment to the numbers below.");
     document.getElementById("orderForm").reset();
   })
   .catch(err => {
