@@ -1,132 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Data GH - Buy Affordable Data</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ffcb05, #e60000); /* MTN-style yellow & red */
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-bottom: 3px solid #e60000;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffcb05;
-  }
-  .container {
-    max-width: 500px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-  }
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #e60000;
-  }
-  label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-  }
-  select, input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #ffcb05;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  button:hover {
-    background: #e6b800;
-  }
-  .payment-info {
-    text-align: center;
-    font-weight: bold;
-    color: #e60000;
-    margin-top: 15px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Data GH</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(
+        rgba(6, 28, 48, 0.85),
+        rgba(6, 28, 48, 0.85)
+      ),
+      linear-gradient(135deg, #0b3c5d, #f5b301);
+      color: #ffffff;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      color: #f5b301;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .prices {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+
+    .card h3 {
+      color: #f5b301;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 1.1rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .cta a {
+      display: inline-block;
+      background: #f5b301;
+      color: #061c30;
+      padding: 14px 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 8px;
+    }
+
+    .cta a:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+  </style>
 </head>
+
 <body>
-<header>Smart Data GH - Affordable Data Bundles</header>
+  <div class="container">
+    
+    <header>
+      <h1>Smart Data GH</h1>
+      <p>Fast • Reliable • MTN Non-Expiry Data Bundles</p>
+    </header>
 
-<div class="container">
-<h2>Order Your Data Bundle</h2>
-<form id="orderForm">
-  <label for="network">Network</label>
-  <select id="network" required>
-    <option value="MTN">MTN</option>
-    <option value="Vodafone">Vodafone</option>
-  </select>
+    <section class="prices">
+      <div class="card"><h3>1GB</h3><p>₵4.8</p></div>
+      <div class="card"><h3>2GB</h3><p>₵9.8</p></div>
+      <div class="card"><h3>3GB</h3><p>₵14.3</p></div>
+      <div class="card"><h3>5GB</h3><p>₵24.8</p></div>
+      <div class="card"><h3>6GB</h3><p>₵28</p></div>
+      <div class="card"><h3>8GB</h3><p>₵33</p></div>
+      <div class="card"><h3>10GB</h3><p>₵46</p></div>
+    </section>
 
-  <label for="bundle">Bundle</label>
-  <select id="bundle" required>
-    <option value="1GB - 4.8GHS">1GB - 4.8GHS</option>
-    <option value="2GB - 9.8GHS">2GB - 9.8GHS</option>
-    <option value="3GB - 14.3GHS">3GB - 14.3GHS</option>
-    <option value="5GB - 24.8GHS">5GB - 24.8GHS</option>
-    <option value="6GB - 28GHS">6GB - 28GHS</option>
-    <option value="8GB - 33GHS">8GB - 33GHS</option>
-    <option value="10GB - 46GHS">10GB - 46GHS</option>
-  </select>
+    <div class="cta">
+      <a href="https://wa.me/233200038427">Order on WhatsApp</a>
+      <a href="tel:0200038427">Call Now</a>
+    </div>
 
-  <label for="phone">Phone Number</label>
-  <input type="text" id="phone" placeholder="024xxxxxxx" required>
+    <footer>
+      © Smart Data GH • Affordable MTN Bundles • No Expiry
+    </footer>
 
-  <button type="submit">Confirm Order</button>
-</form>
-
-<div class="payment-info">
-  Please send payment after submitting your order:<br>
-  MTN: 0594910618 (Margaret)<br>
-  Vodafone: 0200038427 (Foster)
-</div>
-</div>
-
-<script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
-
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const bundle = document.getElementById("bundle").value;
-  const phone = document.getElementById("phone").value;
-  const network = document.getElementById("network").value;
-
-  fetch(WEB_APP_URL + `?bundle=${encodeURIComponent(bundle)}&phone=${encodeURIComponent(phone)}&network=${encodeURIComponent(network)}`, {
-    method: "GET"
-  })
-  .then(res => res.text())
-  .then(data => {
-    alert("✅ Order received! Please send payment to the numbers below.");
-    document.getElementById("orderForm").reset();
-  })
-  .catch(err => {
-    alert("❌ Error sending order. Try again.");
-    console.error(err);
-  });
-});
-</script>
+  </div>
 </body>
 </html>
