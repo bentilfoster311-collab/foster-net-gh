@@ -1,168 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Data GH - Buy Bundles</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #FFCB05, #E60000, #006847);
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      text-align: center;
-      padding: 30px 10px;
-      background: rgba(0,0,0,0.3);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      letter-spacing: 1px;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 1em;
-    }
-    .container {
-      max-width: 500px;
-      margin: 30px auto;
-      background: rgba(0,0,0,0.2);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    }
-    .bundle {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10px 0;
-      padding: 12px;
-      background: rgba(255,255,255,0.1);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    .bundle:hover {
-      background: rgba(255,255,255,0.2);
-    }
-    .bundle span {
-      font-weight: bold;
-      font-size: 1.1em;
-    }
-    input, button {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 8px;
-      border: none;
-      font-size: 1em;
-    }
-    input {
-      border: 2px solid #fff;
-      background: rgba(255,255,255,0.1);
-      color: #fff;
-    }
-    input::placeholder {
-      color: #eee;
-    }
-    button {
-      background: #fff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #eee;
-    }
-    .confirmation {
-      margin-top: 20px;
-      padding: 12px;
-      border-radius: 8px;
-      background: rgba(0,0,0,0.3);
-      text-align: center;
-      display: none;
-    }
-    .payment-info {
-      margin: 15px 0;
-      background: rgba(255,255,255,0.1);
-      padding: 12px;
-      border-radius: 8px;
-    }
-    a {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Data GH - Buy Affordable Data</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffcb05, #e60000); /* MTN-style yellow & red gradient */
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-bottom: 3px solid #e60000;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffcb05;
+  }
+  .container {
+    max-width: 500px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e60000;
+  }
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+  }
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #ffcb05;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button:hover {
+    background: #e6b800;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <h1>Smart Data GH</h1>
-    <p>Fast, Reliable, Affordable Data Bundles</p>
-  </header>
+<header>Smart Data GH - Affordable Data Bundles</header>
 
-  <div class="container">
-    <h2>Select Your Bundle</h2>
+<div class="container">
+<h2>Order Your Data Bundle</h2>
+<form id="orderForm">
+  <label for="network">Network</label>
+  <select id="network" required>
+    <option value="MTN">MTN</option>
+    <option value="Vodafone">Vodafone</option>
+  </select>
 
-    <div class="bundle" onclick="selectBundle('1GB', 4.8)">1GB - 4.8 GHS</div>
-    <div class="bundle" onclick="selectBundle('2GB', 11)">2GB - 11 GHS</div>
-    <div class="bundle" onclick="selectBundle('3GB', 14.3)">3GB - 14.3 GHS</div>
-    <div class="bundle" onclick="selectBundle('5GB', 24.8)">5GB - 24.8 GHS</div>
-    <div class="bundle" onclick="selectBundle('6GB', 28)">6GB - 28 GHS</div>
-    <div class="bundle" onclick="selectBundle('8GB', 33)">8GB - 33 GHS</div>
-    <div class="bundle" onclick="selectBundle('10GB', 46)">10GB - 46 GHS</div>
+  <label for="bundle">Bundle</label>
+  <select id="bundle" required>
+    <option value="1GB - 5.5GHS">1GB - 5.5GHS</option>
+    <option value="2GB - 11GHS">2GB - 11GHS</option>
+    <option value="3GB - 14.3GHS">3GB - 14.3GHS</option>
+    <option value="5GB - 24.8GHS">5GB - 24.8GHS</option>
+    <option value="6GB - 28GHS">6GB - 28GHS</option>
+    <option value="8GB - 33GHS">8GB - 33GHS</option>
+    <option value="10GB - 46GHS">10GB - 46GHS</option>
+  </select>
 
-    <h2>Enter Your Phone Number</h2>
-    <input type="text" id="phone" placeholder="e.g., 024XXXXXXXX" />
+  <label for="phone">Phone Number</label>
+  <input type="text" id="phone" placeholder="024xxxxxxx" required>
 
-    <div class="payment-info">
-      <p><strong>Pay via Mobile Money:</strong></p>
-      <p>MTN: 0594910618 (Margaret)</p>
-      <p>Vodafone: 0200038427 (Foster)</p>
-    </div>
+  <button type="submit">Confirm Order</button>
+</form>
+</div>
 
-    <button onclick="submitOrder()">Confirm Order</button>
+<script>
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
 
-    <div class="confirmation" id="confirmation">
-      Thanks for your order! ✅ Your bundle will be delivered shortly.<br>
-      For questions, chat with us on <a href="https://wa.me/0200038427" target="_blank">WhatsApp</a>.
-    </div>
-  </div>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
 
-  <script>
-    let selectedBundle = null;
-    let bundlePrice = 0;
+  const bundle = document.getElementById("bundle").value;
+  const phone = document.getElementById("phone").value;
+  const network = document.getElementById("network").value;
 
-    function selectBundle(name, price) {
-      selectedBundle = name;
-      bundlePrice = price;
-      alert(`You selected ${name} for ${price} GHS`);
-    }
-
-    function submitOrder() {
-      const phone = document.getElementById('phone').value.trim();
-      if (!selectedBundle) {
-        alert("Please select a bundle first.");
-        return;
-      }
-      if (!phone) {
-        alert("Please enter your phone number.");
-        return;
-      }
-
-      // Show confirmation message
-      const conf = document.getElementById('confirmation');
-      conf.style.display = 'block';
-
-      // Optionally, you can log order in console for manual processing
-      console.log(`New Order: ${selectedBundle} - ${bundlePrice} GHS for ${phone}`);
-      alert(`Order received for ${selectedBundle} - check your payment!`);
-    }
-  </script>
+  fetch(WEB_APP_URL + `?bundle=${encodeURIComponent(bundle)}&phone=${encodeURIComponent(phone)}&network=${encodeURIComponent(network)}`, {
+    method: "GET"
+  })
+  .then(res => res.text())
+  .then(data => {
+    alert("✅ Order received! Please send payment via MoMo or Vodafone Cash.");
+    document.getElementById("orderForm").reset();
+  })
+  .catch(err => {
+    alert("❌ Error sending order. Try again.");
+    console.error(err);
+  });
+});
+</script>
 </body>
 </html>
