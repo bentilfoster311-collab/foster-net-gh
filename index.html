@@ -1,145 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Smart Data GH - Order Bundles</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Data GH - Buy Affordable Data</title>
 <style>
   body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ffcb05, #e60000); /* MTN-style yellow & red */
+    color: #000;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg, #f5b301, #061c30); /* MTN-style gradient */
-    color: #fff;
-    min-height: 100vh;
-  }
-  .container {
-    max-width: 700px;
-    margin: auto;
-    padding: 30px 20px;
+    padding: 0;
   }
   header {
     text-align: center;
-    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-bottom: 3px solid #e60000;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffcb05;
   }
-  header h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-  }
-  header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: rgba(255, 255, 255, 0.08);
+  .container {
+    max-width: 500px;
+    margin: 30px auto;
+    background: #fff;
     padding: 20px;
     border-radius: 12px;
-    backdrop-filter: blur(3px);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e60000;
   }
   label {
+    display: block;
+    margin: 10px 0 5px;
     font-weight: bold;
   }
   select, input {
+    width: 100%;
     padding: 10px;
+    margin-bottom: 15px;
     border-radius: 8px;
-    border: none;
-    font-size: 1rem;
+    border: 1px solid #ccc;
   }
   button {
-    background-color: #f5b301;
-    color: #061c30;
+    width: 100%;
     padding: 12px;
-    font-size: 1.1rem;
-    font-weight: bold;
+    background: #ffcb05;
     border: none;
-    border-radius: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #000;
     cursor: pointer;
+    font-size: 1em;
   }
   button:hover {
-    opacity: 0.9;
+    background: #e6b800;
   }
-  footer {
+  .payment-info {
     text-align: center;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-weight: bold;
+    color: #e60000;
+    margin-top: 15px;
   }
 </style>
 </head>
 <body>
+<header>Smart Data GH - Affordable Data Bundles</header>
+
 <div class="container">
-<header>
-  <h1>Smart Data GH</h1>
-  <p>Fast • Reliable • MTN Non-Expiry Bundles</p>
-</header>
-
+<h2>Order Your Data Bundle</h2>
 <form id="orderForm">
-  <label for="bundle">Select Bundle:</label>
+  <label for="network">Network</label>
+  <select id="network" required>
+    <option value="MTN">MTN</option>
+    <option value="Vodafone">Vodafone</option>
+  </select>
+
+  <label for="bundle">Bundle</label>
   <select id="bundle" required>
-    <option value="">--Choose--</option>
-    <option value="1GB - 4.8">1GB - ₵4.8</option>
-    <option value="2GB - 9.8">2GB - ₵9.8</option>
-    <option value="3GB - 14.3">3GB - ₵14.3</option>
-    <option value="5GB - 24.8">5GB - ₵24.8</option>
-    <option value="6GB - 28">6GB - ₵28</option>
-    <option value="8GB - 33">8GB - ₵33</option>
-    <option value="10GB - 46">10GB - ₵46</option>
+    <option value="1GB - 4.8GHS">1GB - 4.8GHS</option>
+    <option value="2GB - 9.8GHS">2GB - 9.8GHS</option>
+    <option value="3GB - 14.3GHS">3GB - 14.3GHS</option>
+    <option value="5GB - 24.8GHS">5GB - 24.8GHS</option>
+    <option value="6GB - 28GHS">6GB - 28GHS</option>
+    <option value="8GB - 33GHS">8GB - 33GHS</option>
+    <option value="10GB - 46GHS">10GB - 46GHS</option>
   </select>
 
-  <label for="number">Enter Phone Number:</label>
-  <input type="tel" id="number" placeholder="e.g., 0200038427" required>
+  <label for="phone">Phone Number</label>
+  <input type="text" id="phone" placeholder="024xxxxxxx" required>
 
-  <label for="momo">Select Mobile Money Account Used:</label>
-  <select id="momo" required>
-    <option value="">--Choose--</option>
-    <option value="Vodafone 0200038427 - Foster">Vodafone 0200038427 - Foster</option>
-    <option value="MTN 0594910618 - Margaret">MTN 0594910618 - Margaret</option>
-  </select>
-
-  <label for="amount">Amount Paid (₵):</label>
-  <input type="number" id="amount" placeholder="e.g., 4.8" step="0.01" required>
-
-  <button type="submit">Place Order</button>
+  <button type="submit">Confirm Order</button>
 </form>
 
-<footer>
-  © Smart Data GH • Affordable MTN Bundles • No Expiry
-</footer>
+<div class="payment-info">
+  Please send payment after submitting your order:<br>
+  MTN: 0594910618 (Margaret)<br>
+  Vodafone: 0200038427 (Foster)
+</div>
 </div>
 
 <script>
-const form = document.getElementById('orderForm');
+const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
 
-form.addEventListener('submit', function(e){
+document.getElementById("orderForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  const bundle = document.getElementById('bundle').value;
-  const number = document.getElementById('number').value;
-  const momo = document.getElementById('momo').value;
-  const amount = document.getElementById('amount').value;
+  const bundle = document.getElementById("bundle").value;
+  const phone = document.getElementById("phone").value;
+  const network = document.getElementById("network").value;
 
-  if(!bundle || !number || !momo || !amount){
-    alert('Please fill in all fields');
-    return;
-  }
-
-  // 🔹 Your Apps Script Web App URL
-  const webAppUrl = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
-
-  fetch(webAppUrl + `?bundle=${encodeURIComponent(bundle)}&number=${encodeURIComponent(number)}&momo=${encodeURIComponent(momo)}&amount=${encodeURIComponent(amount)}`)
-  .then(response => response.text())
+  fetch(WEB_APP_URL + `?bundle=${encodeURIComponent(bundle)}&phone=${encodeURIComponent(phone)}&network=${encodeURIComponent(network)}`, {
+    method: "GET"
+  })
+  .then(res => res.text())
   .then(data => {
-    alert('Order submitted successfully! You will receive your data shortly.');
-    form.reset();
+    alert("✅ Order received! Please send payment to the numbers below.");
+    document.getElementById("orderForm").reset();
   })
   .catch(err => {
+    alert("❌ Error sending order. Try again.");
     console.error(err);
-    alert('Error submitting order. Please try again.');
   });
 });
 </script>
 </body>
-</html>
+</html> 
