@@ -3,36 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Smart Data GH</title>
-
+  <title>Smart Data GH - Order Bundles</title>
   <style>
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(
-        rgba(6, 28, 48, 0.85),
-        rgba(6, 28, 48, 0.85)
-      ),
-      linear-gradient(135deg, #0b3c5d, #f5b301);
-      color: #ffffff;
+      background-color: #061c30; /* MTN-style dark blue */
+      color: #fff;
       min-height: 100vh;
     }
 
     .container {
-      max-width: 900px;
+      max-width: 700px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 30px 20px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 30px;
     }
 
     header h1 {
-      color: #f5b301;
+      color: #f5b301; /* MTN yellow */
       font-size: 2.5rem;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     header p {
@@ -40,53 +35,45 @@
       opacity: 0.9;
     }
 
-    .prices {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    form {
+      display: flex;
+      flex-direction: column;
       gap: 15px;
-      margin-bottom: 40px;
-    }
-
-    .card {
       background: rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
       padding: 20px;
-      text-align: center;
-      backdrop-filter: blur(4px);
+      border-radius: 12px;
+      backdrop-filter: blur(3px);
     }
 
-    .card h3 {
-      color: #f5b301;
-      margin-bottom: 8px;
-    }
-
-    .card p {
-      font-size: 1.1rem;
-    }
-
-    .cta {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .cta a {
-      display: inline-block;
-      background: #f5b301;
-      color: #061c30;
-      padding: 14px 22px;
-      border-radius: 30px;
-      text-decoration: none;
+    label {
       font-weight: bold;
-      margin: 8px;
     }
 
-    .cta a:hover {
+    select, input {
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #f5b301;
+      color: #061c30;
+      padding: 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    button:hover {
       opacity: 0.9;
     }
 
     footer {
       text-align: center;
-      margin-top: 50px;
+      margin-top: 30px;
       font-size: 0.9rem;
       opacity: 0.8;
     }
@@ -95,31 +82,64 @@
 
 <body>
   <div class="container">
-    
     <header>
       <h1>Smart Data GH</h1>
-      <p>Fast • Reliable • MTN Non-Expiry Data Bundles</p>
+      <p>Fast • Reliable • MTN Non-Expiry Bundles</p>
     </header>
 
-    <section class="prices">
-      <div class="card"><h3>1GB</h3><p>₵4.8</p></div>
-      <div class="card"><h3>2GB</h3><p>₵9.8</p></div>
-      <div class="card"><h3>3GB</h3><p>₵14.3</p></div>
-      <div class="card"><h3>5GB</h3><p>₵24.8</p></div>
-      <div class="card"><h3>6GB</h3><p>₵28</p></div>
-      <div class="card"><h3>8GB</h3><p>₵33</p></div>
-      <div class="card"><h3>10GB</h3><p>₵46</p></div>
-    </section>
+    <form id="orderForm">
+      <label for="bundle">Select Bundle:</label>
+      <select id="bundle" required>
+        <option value="">--Choose--</option>
+        <option value="1GB - 4.8">1GB - ₵4.8</option>
+        <option value="2GB - 9.8">2GB - ₵9.8</option>
+        <option value="3GB - 14.3">3GB - ₵14.3</option>
+        <option value="5GB - 24.8">5GB - ₵24.8</option>
+        <option value="6GB - 28">6GB - ₵28</option>
+        <option value="8GB - 33">8GB - ₵33</option>
+        <option value="10GB - 46">10GB - ₵46</option>
+      </select>
 
-    <div class="cta">
-      <a href="https://wa.me/233200038427">Order on WhatsApp</a>
-      <a href="tel:0200038427">Call Now</a>
-    </div>
+      <label for="number">Enter Phone Number:</label>
+      <input type="tel" id="number" placeholder="e.g., 0200038427" required>
+
+      <button type="submit">Place Order</button>
+    </form>
 
     <footer>
       © Smart Data GH • Affordable MTN Bundles • No Expiry
     </footer>
-
   </div>
+
+  <script>
+    const form = document.getElementById('orderForm');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      const bundle = document.getElementById('bundle').value;
+      const number = document.getElementById('number').value;
+
+      if(!bundle || !number){
+        alert('Please select a bundle and enter your number');
+        return;
+      }
+
+      // Replace this with your actual Google Apps Script web app URL
+      const webAppUrl = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
+
+      fetch(webAppUrl + `?bundle=${encodeURIComponent(bundle)}&number=${encodeURIComponent(number)}`)
+      .then(response => response.text())
+      .then(data => {
+        alert('Order submitted successfully! You will receive your data shortly.');
+        form.reset();
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Error submitting order. Please try again.');
+      });
+    });
+  </script>
+
 </body>
 </html>
