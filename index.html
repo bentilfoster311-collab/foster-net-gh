@@ -1,132 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smart Data GH - Buy Affordable Data</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #ffcb05, #e60000); /* MTN-style yellow & red */
-    color: #000;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-bottom: 3px solid #e60000;
-    font-size: 1.5em;
-    font-weight: bold;
-    color: #ffcb05;
-  }
-  .container {
-    max-width: 500px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-  }
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #e60000;
-  }
-  label {
-    display: block;
-    margin: 10px 0 5px;
-    font-weight: bold;
-  }
-  select, input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-  }
-  button {
-    width: 100%;
-    padding: 12px;
-    background: #ffcb05;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #000;
-    cursor: pointer;
-    font-size: 1em;
-  }
-  button:hover {
-    background: #e6b800;
-  }
-  .payment-info {
-    text-align: center;
-    font-weight: bold;
-    color: #e60000;
-    margin-top: 15px;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foster Net GH</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #ffcb05; /* MTN yellow */
+    }
+
+    header {
+      background: #000;
+      color: #ffcb05;
+      text-align: center;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #000;
+    }
+
+    label {
+      font-weight: bold;
+      margin-top: 10px;
+      display: block;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #000;
+      color: #ffcb05;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #222;
+    }
+
+    .payment {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
 </head>
+
 <body>
-<header>Smart Data GH - Affordable Data Bundles</header>
+
+<header>Foster Net GH – Fast & Reliable Data Bundles</header>
 
 <div class="container">
-<h2>Order Your Data Bundle</h2>
-<form id="orderForm">
-  <label for="network">Network</label>
-  <select id="network" required>
-    <option value="MTN">MTN</option>
-    <option value="Vodafone">Vodafone</option>
-  </select>
+  <h2>Order Data Bundle</h2>
 
-  <label for="bundle">Bundle</label>
-  <select id="bundle" required>
-    <option value="1GB - 4.8GHS">1GB - 4.8GHS</option>
-    <option value="2GB - 9.8GHS">2GB - 9.8GHS</option>
-    <option value="3GB - 14.3GHS">3GB - 14.3GHS</option>
-    <option value="5GB - 24.8GHS">5GB - 24.8GHS</option>
-    <option value="6GB - 28GHS">6GB - 28GHS</option>
-    <option value="8GB - 33GHS">8GB - 33GHS</option>
-    <option value="10GB - 46GHS">10GB - 46GHS</option>
-  </select>
+  <form id="orderForm">
+    <label for="network">Network</label>
+    <select id="network" required>
+      <option value="MTN">MTN</option>
+      <option value="Vodafone">Vodafone</option>
+    </select>
 
-  <label for="phone">Phone Number</label>
-  <input type="text" id="phone" placeholder="024xxxxxxx" required>
+    <label for="bundle">Select Bundle</label>
+    <select id="bundle" required>
+      <option value="1GB - 4.8GHS">1GB - 4.8 GHS</option>
+      <option value="2GB - 9.8GHS">2GB - 9.8 GHS</option>
+      <option value="3GB - 14.3GHS">3GB - 14.3 GHS</option>
+      <option value="5GB - 24.8GHS">5GB - 24.8 GHS</option>
+      <option value="6GB - 28GHS">6GB - 28 GHS</option>
+      <option value="8GB - 33GHS">8GB - 33 GHS</option>
+      <option value="10GB - 46GHS">10GB - 46 GHS</option>
+    </select>
 
-  <button type="submit">Confirm Order</button>
-</form>
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" placeholder="024xxxxxxx" required />
 
-<div class="payment-info">
-  Please send payment after submitting your order:<br>
-  MTN: 0594910618 (Margaret)<br>
-  Vodafone: 0200038427 (Foster)
-</div>
+    <button type="submit">Submit Order</button>
+  </form>
+
+  <div class="payment">
+    Send Payment After Ordering 👇<br /><br />
+    MTN: <strong>0594910618</strong> (Margaret)<br />
+    Vodafone: <strong>0200038427</strong> (Foster)
+  </div>
+
+  <div class="note">
+    Orders are processed immediately after payment confirmation.
+  </div>
 </div>
 
 <script>
-const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
+  const WEB_APP_URL =
+    "https://script.google.com/macros/s/AKfycbyYhENkKUK_2AA7jXX0Pzq9OwT_ExzyT8jOXIYlASZ5knbqlKJ0gAfZW6T4JT0gjG2V6Q/exec";
 
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+  document.getElementById("orderForm").addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  const bundle = document.getElementById("bundle").value;
-  const phone = document.getElementById("phone").value;
-  const network = document.getElementById("network").value;
+    const network = document.getElementById("network").value;
+    const bundle = document.getElementById("bundle").value;
+    const phone = document.getElementById("phone").value;
 
-  fetch(WEB_APP_URL + `?bundle=${encodeURIComponent(bundle)}&phone=${encodeURIComponent(phone)}&network=${encodeURIComponent(network)}`, {
-    method: "GET"
-  })
-  .then(res => res.text())
-  .then(data => {
-    alert("✅ Order received! Please send payment to the numbers below.");
-    document.getElementById("orderForm").reset();
-  })
-  .catch(err => {
-    alert("❌ Error sending order. Try again.");
-    console.error(err);
+    fetch(
+      WEB_APP_URL +
+        "?network=" + encodeURIComponent(network) +
+        "&bundle=" + encodeURIComponent(bundle) +
+        "&phone=" + encodeURIComponent(phone),
+      { method: "GET" }
+    )
+      .then(() => {
+        alert("✅ Order received! Please send payment now.");
+        document.getElementById("orderForm").reset();
+      })
+      .catch(() => {
+        alert("❌ Error submitting order. Try again.");
+      });
   });
-});
 </script>
+
 </body>
-</html> 
+</html>
